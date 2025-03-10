@@ -1,0 +1,1 @@
+g++ helloworld.cpp -o exec -Wall -Wextra -Werror -std=c++98
