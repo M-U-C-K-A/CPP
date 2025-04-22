@@ -6,7 +6,7 @@
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:01:52 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/03/04 23:54:17 by hdelacou         ###   ########.fr       */
+/*   Updated: 2025/04/08 20:25:43 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,34 +38,34 @@ class Fixed
 	Fixed(const int value);
 	Fixed(const float value);
 	/* Basic Operators */
-	Fixed &operator=(Fixed const &copy);
-	Fixed operator+(Fixed const &copy) const;
-	Fixed operator-(Fixed const &copy) const;
-	Fixed operator*(Fixed const &copy) const;
-	Fixed operator/(Fixed const &copy) const;
-	bool operator==(Fixed const &copy) const;
-	bool operator!=(Fixed const &copy) const;
-	bool operator<=(Fixed const &copy) const;
-	bool operator>=(Fixed const &copy) const;
-	bool operator<(Fixed const &copy) const;
-	bool operator>(Fixed const &copy) const;
+	Fixed	&operator=(Fixed const &copy);
+	Fixed	operator+(Fixed const &copy) const;
+	Fixed	operator-(Fixed const &copy) const;
+	Fixed	operator*(Fixed const &copy) const;
+	Fixed	operator/(Fixed const &copy) const;
+	bool	operator==(Fixed const &copy) const;
+	bool	operator!=(Fixed const &copy) const;
+	bool	operator<=(Fixed const &copy) const;
+	bool	operator>=(Fixed const &copy) const;
+	bool	operator<(Fixed const &copy) const;
+	bool	operator>(Fixed const &copy) const;
 	/* Other Operators */
-	Fixed &operator++(void);
-	Fixed &operator--(void);
-	Fixed operator++(int value);
-	Fixed operator--(int value);
+	Fixed	&operator++(void);
+	Fixed	&operator--(void);
+	Fixed	operator++(int value);
+	Fixed	operator--(int value);
 	/* Min & Max */
 	static const Fixed &min(Fixed const &a, Fixed const &b);
 	static const Fixed &max(Fixed const &a, Fixed const &b);
 	/* Getters & Setters */
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
 	/* Conversions */
-	float toFloat(void) const;
-	int toInt(void) const;
+	float	toFloat(void) const;
+	int		toInt(void) const;
   private:
-	int _fixedPointValue;
-	static const int _fractionalBits = 8;
+	int					_fixedPointValue;
+	static const int	_fractionalBits = 8;
 };
 
 std::ostream &operator<<(std::ostream &str, const Fixed &fixed);

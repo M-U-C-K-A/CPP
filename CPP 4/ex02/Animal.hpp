@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 00:32:45 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/04/08 20:53:58 by hdelacou         ###   ########.fr       */
+/*   Created: 2025/04/08 21:57:16 by hdelacou          #+#    #+#             */
+/*   Updated: 2025/04/09 20:52:19 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include <iostream>
+#include <string>
 
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
@@ -20,28 +22,23 @@
 #define BOLD "\033[0;1m"
 #define DIM "\033[2m"
 
-#define DAMAGE "\033[1;31m"
-#define ENERGY "\033[1;33m"
-#define HEALTH "\033[1;32m"
-#define DEBUG "\033[1;35m"
-#define INFO "\033[1;36m"
+#define RED "\033[31m"
+#define YELLOW "\033[33m"
+#define GREEN "\033[32m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
 
-class ClapTrap
+class Animal
 {
+  protected:
+	std::string type;
+
   public:
-	ClapTrap(void);
-	ClapTrap(std::string name);
-	~ClapTrap(void);
-	ClapTrap(ClapTrap const &src);
-	ClapTrap &operator=(ClapTrap const &clapTrap);
-
-	void attack(std::string const &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-
-  private:
-	std::string _name;
-	int _hitPoints;
-	int _energyPoints;
-	int _attackDamage;
+	Animal();
+	Animal(const Animal &other);
+	virtual ~Animal();
+	Animal &operator=(const Animal &other);
+	std::string getType() const;
+	virtual void makeSound() const = 0;
 };

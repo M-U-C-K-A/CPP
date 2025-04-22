@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 17:01:36 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/04/08 20:23:05 by hdelacou         ###   ########.fr       */
+/*   Created: 2025/04/08 22:11:09 by hdelacou          #+#    #+#             */
+/*   Updated: 2025/04/08 23:03:50 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
 
-int	main(void)
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Dog : public Animal
 {
-	Fixed	a;
-	Fixed	b(a);
-	Fixed	c;
-
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return (EXIT_SUCCESS);
-}
+	private:
+		Brain* brain;
+	public:
+		Dog();
+		Dog(const Dog &other);
+		~Dog();
+		Dog &operator=(const Dog &other);
+		void makeSound() const;
+		Brain* getBrain() const;
+};

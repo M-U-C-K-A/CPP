@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 17:01:36 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/04/08 20:23:05 by hdelacou         ###   ########.fr       */
+/*   Created: 2025/04/09 21:09:15 by hdelacou          #+#    #+#             */
+/*   Updated: 2025/04/09 21:26:06 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
 
-int	main(void)
+#include "AMateria.hpp"
+
+class Ice : public AMateria
 {
-	Fixed	a;
-	Fixed	b(a);
-	Fixed	c;
-
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return (EXIT_SUCCESS);
-}
+	public:
+		Ice();
+		virtual ~Ice();
+		AMateria *clone() const;
+		void use(ICharacter &target);
+};

@@ -6,7 +6,7 @@
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:01:52 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/03/04 22:34:30 by hdelacou         ###   ########.fr       */
+/*   Updated: 2025/04/08 20:17:42 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ class Fixed
 	Fixed(const int value);
 	Fixed(const float value);
 	~Fixed();
-	Fixed &operator=(Fixed const &other);
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
-	float toFloat(void) const;
-	int toInt(void) const;
+	Fixed	&operator=(Fixed const &other);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+	float	toFloat(void) const;
+	int		toInt(void) const;
+
   private:
-	int _fixedPointValue;
-	static const int _fractionalBits = 8;
+	int					_fixedPointValue;
+	static const int	_fractionalBits = 8;
 };
 
-std::ostream &operator << (std::ostream &str, const Fixed &fixed);
-
+std::ostream &operator<<(std::ostream &str, const Fixed &fixed);

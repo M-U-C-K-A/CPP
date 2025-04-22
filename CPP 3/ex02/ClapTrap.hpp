@@ -6,11 +6,12 @@
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 00:32:45 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/04/08 20:53:58 by hdelacou         ###   ########.fr       */
+/*   Updated: 2025/03/12 00:50:07 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include <iostream>
 
 #define EXIT_SUCCESS 0
@@ -18,7 +19,7 @@
 
 #define RESET "\033[0m"
 #define BOLD "\033[0;1m"
-#define DIM "\033[2m"
+#define DIM "\033[0;2m"
 
 #define DAMAGE "\033[1;31m"
 #define ENERGY "\033[1;33m"
@@ -39,7 +40,7 @@ class ClapTrap
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
-  private:
+  protected:
 	std::string _name;
 	int _hitPoints;
 	int _energyPoints;

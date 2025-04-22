@@ -6,7 +6,7 @@
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:01:47 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/03/04 23:54:27 by hdelacou         ###   ########.fr       */
+/*   Updated: 2025/04/08 20:20:40 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,3 @@ std::ostream &operator << (std::ostream &str, const Fixed &fixed)
 {
 	return (str << fixed.toFloat());
 }
-

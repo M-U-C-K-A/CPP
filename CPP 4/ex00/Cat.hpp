@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 17:01:36 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/04/08 20:23:05 by hdelacou         ###   ########.fr       */
+/*   Created: 2025/04/08 22:10:33 by hdelacou          #+#    #+#             */
+/*   Updated: 2025/04/08 22:10:42 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
 
-int	main(void)
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-	Fixed	a;
-	Fixed	b(a);
-	Fixed	c;
-
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return (EXIT_SUCCESS);
-}
+	public:
+		Cat();
+		Cat(const Cat &other);
+		~Cat();
+		Cat &operator=(const Cat &other);
+		void makeSound() const;
+};

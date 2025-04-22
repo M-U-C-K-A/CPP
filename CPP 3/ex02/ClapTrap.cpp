@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 21:00:48 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/04/08 21:00:49 by hdelacou         ###   ########.fr       */
+/*   Created: 2025/03/05 17:08:37 by hdelacou          #+#    #+#             */
+/*   Updated: 2025/04/08 21:18:17 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void ClapTrap::attack(const std::string &target)
 		return;
 	}
 	std::cout << BOLD << "ClapTrap " << this->_name << " attacks " << target
-			  << ", causing " << this->_attackDamage << " points of damage" << RESET << std::endl;
+			  << ", causing " << this->_attackDamage << " damage" << RESET << std::endl;
 	this->_energyPoints--;
 }
 
@@ -71,7 +71,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << ENERGY << "ClapTrap " << this->_name << " has no energy left" << RESET << std::endl;
 		return;
 	}
-	std::cout << HEALTH << "ClapTrap " << this->_name << " repairs itself for "
+	std::cout << HEALTH << "ClapTrap " << this->_name << " repairs "
 			  << amount << " hit points" << RESET << std::endl;
 	this->_hitPoints += amount;
 	this->_energyPoints--;

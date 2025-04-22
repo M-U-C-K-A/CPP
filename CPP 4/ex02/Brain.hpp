@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelacou <hdelacou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 17:01:36 by hdelacou          #+#    #+#             */
-/*   Updated: 2025/04/08 20:23:05 by hdelacou         ###   ########.fr       */
+/*   Created: 2025/04/08 22:52:34 by hdelacou          #+#    #+#             */
+/*   Updated: 2025/04/09 20:11:13 by hdelacou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
 
-int	main(void)
+#include "Animal.hpp"
+
+class Brain
 {
-	Fixed	a;
-	Fixed	b(a);
-	Fixed	c;
+	private:
+		std::string	ideas[100];
+	public:
+		Brain();
+		Brain(const Brain& other);
+		~Brain();
+		Brain& operator=(const Brain& other);
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return (EXIT_SUCCESS);
-}
+		/* getters and setters */
+		std::string const	&getIdea(int const &index) const;
+		void				setIdea(int const &index, std::string const &idea);
+};
