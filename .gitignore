@@ -1,0 +1,25 @@
+# Build artifacts
+*.o
+obj/
+*.exe
+*.out
+
+# Executable names from Makefiles
+functions
+phonebook
+account
+megaphone
+fixed
+bsp
+brain
+animal
+bureaucrat
+zombie
+span
+easyfind
+mutant
+
+# System files
+.DS_Store
+*.tmp
+*~
